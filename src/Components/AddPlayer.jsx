@@ -13,6 +13,7 @@ export default function AddPlayer() {
 
   return (
     <form
+      className="text-center"
       onSubmit={(e) => {
         e.preventDefault();
         async function postPlayer() {
@@ -24,67 +25,80 @@ export default function AddPlayer() {
         location.reload();
       }}
     >
-      <h1>Add New Player to Roster</h1>
-      <label htmlFor="name">
+      <h1 className="text-4xl py-4">Add New Player to Roster</h1>
+      <label className="" htmlFor="name">
         Name:
-        <input
-          type="text"
-          required
-          value={playerObj.name}
-          onChange={(e) => {
-            setPlayerObj({
-              ...playerObj,
-              name: e.target.value,
-            });
-          }}
-        />
       </label>
-      <label htmlFor="breed">
+      <input
+        id="name"
+        className="input"
+        type="text"
+        required
+        value={playerObj.name}
+        onChange={(e) => {
+          setPlayerObj({
+            ...playerObj,
+            name: e.target.value,
+          });
+        }}
+      />
+
+      <label className="" htmlFor="breed">
         Breed:
-        <input
-          type="text"
-          required
-          value={playerObj.breed}
-          onChange={(e) => {
-            setPlayerObj({
-              ...playerObj,
-              breed: e.target.value,
-            });
-          }}
-        />
       </label>
-      <label htmlFor="imageUrl">
+      <input
+        id="breed"
+        className="input"
+        type="text"
+        required
+        value={playerObj.breed}
+        onChange={(e) => {
+          setPlayerObj({
+            ...playerObj,
+            breed: e.target.value,
+          });
+        }}
+      />
+
+      <label className="" htmlFor="imageUrl">
         Image Url:
-        <input
-          type="text"
-          required
-          value={playerObj.imgUrl}
-          onChange={(e) => {
-            setPlayerObj({
-              ...playerObj,
-              imgUrl: e.target.value,
-            });
-          }}
-        />
       </label>
-      <label htmlFor="status">
+      <input
+        id="imageUrl"
+        className="input"
+        type="text"
+        required
+        value={playerObj.imgUrl}
+        onChange={(e) => {
+          setPlayerObj({
+            ...playerObj,
+            imgUrl: e.target.value,
+          });
+        }}
+      />
+
+      <label className="" htmlFor="status">
         Status:
-        <select
-          name="status"
-          id="status"
-          value={playerObj.status}
-          onChange={(e) => {
-            setPlayerObj({
-              ...playerObj,
-              status: e.target.value,
-            });
-          }}
-        >
-          <option value="bench">bench</option>
-          <option value="field">field</option>
-        </select>
       </label>
-      <button type="submit">Submit</button>
+      <select
+        className="btn my-2"
+        name="status"
+        id="status"
+        value={playerObj.status}
+        onChange={(e) => {
+          setPlayerObj({
+            ...playerObj,
+            status: e.target.value,
+          });
+        }}
+      >
+        <option value="bench">bench</option>
+        <option value="field">field</option>
+      </select>
+      <br />
+      <button className="btn my-2" type="submit">
+        Submit
+      </button>
     </form>
   );
 }

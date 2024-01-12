@@ -4,8 +4,9 @@ import { removePlayer } from "../API/api";
 export default function Buttons({ playerNav, buttonText, player }) {
   const navigate = useNavigate();
   return (
-    <div>
+    <div className="py-4">
       <button
+        className="btn"
         type={"button"}
         onClick={() => {
           navigate(`/${playerNav}`);
@@ -14,6 +15,7 @@ export default function Buttons({ playerNav, buttonText, player }) {
         {buttonText}
       </button>
       <button
+        className="btn"
         type={"button"}
         onClick={() => {
           removePlayer(player.id);

@@ -4,6 +4,7 @@ export default function SearchBar({ players, setSearchResults }) {
   const navigate = useNavigate();
   return (
     <form
+      className="text-center"
       onSubmit={(e) => {
         e.preventDefault();
         const inputValue = e.target[0].value;
@@ -12,14 +13,16 @@ export default function SearchBar({ players, setSearchResults }) {
         );
 
         setSearchResults(playerNames);
-        navigate(`/search/${e.target.value}`);
+        navigate(`/search/${inputValue.toLowerCase()}`);
       }}
     >
       <label htmlFor="searchBar">
-        Search for a puppy
-        <input type="text" />
+        Search for a puppy by name
+        <input type="text" className="input" />
       </label>
-      <button type="submit">Search</button>
+      <button type="submit" className="btn">
+        Search
+      </button>
     </form>
   );
 }

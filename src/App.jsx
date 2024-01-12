@@ -19,8 +19,8 @@ function App() {
     init();
   }, []);
   return (
-    <>
-      <AddPlayer />
+    <div className="bg-[#A9957B] min-h-screen text-center">
+      <h1 className="text-5xl py-4">Puppy Bowl Roster</h1>
       <SearchBar players={players} setSearchResults={setSearchResults} />
       <Routes>
         <Route path="/" element={<PlayerList players={players} />} />
@@ -29,8 +29,9 @@ function App() {
           path="/search/:searchTerm"
           element={<PlayerList players={searchResults} />}
         />
-      </Routes>
-    </>
+      </Routes>{" "}
+      <AddPlayer />
+    </div>
   );
 }
 

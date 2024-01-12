@@ -14,14 +14,18 @@ export default function SinglePlayer() {
     player();
   }, [playerId]);
   return (
-    <>
+    <div className="flex justify-center py-12">
       {player.map((player) => (
         <div
-          className="flex flex-col justify-center items-center text-center"
+          className="flex flex-col w-fit items-center justify-center text-center m-3 bg-sky-400 rounded-3xl"
           key={player.id}
         >
-          <p>{player.name}</p>
-          <img src={player.imageUrl} alt={`Image of player ${player.id}`} />
+          <p className="text-2xl py-2">{player.name}</p>
+          <img
+            src={player.imageUrl}
+            alt={`Image of player ${player.id}`}
+            className="max-w-[90%] rounded-3xl"
+          />
           <Buttons
             playerNav=""
             buttonText={"See All Players"}
@@ -31,6 +35,6 @@ export default function SinglePlayer() {
           <p>{`Status: ${player.status}`}</p>
         </div>
       ))}
-    </>
+    </div>
   );
 }
