@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { fetchSinglePlayer } from "../API/api";
 import Buttons from "./Buttons";
 export default function SinglePlayer() {
   const [player, setPlayer] = useState([{}]);
-  const navigate = useNavigate();
   const { playerId } = useParams();
   useEffect(() => {
     async function player() {
